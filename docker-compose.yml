@@ -1,0 +1,30 @@
+version: "3.0"
+services:
+  funnela:
+    image: wlatanowicz/funnela-web:latest
+    ports:
+      - 80:80
+    environment:
+      - REDIS_DSN=tcp://redis:6379
+      - DATABASE_HOST=db
+      - DATABASE_NAME=funnela
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=PassWord
+      - SECURITY_SALT=BGeUEiaRugAvCDUJTouNLoqWASCaYEUB
+
+  redis:
+    image: redis
+
+  db:
+    image: postgres:11
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: PassWord
+      POSTGRES_DB: funnela
+
+volumes:
+  pgdata:
+    driver: local
