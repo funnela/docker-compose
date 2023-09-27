@@ -11,6 +11,7 @@ services:
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=PassWord
       - SECURITY_SALT=BGeUEiaRugAvCDUJTouNLoqWASCaYEUB
+      - SUPERVISOR_PASSWORD=MasterPassword
 
   redis:
     image: redis
