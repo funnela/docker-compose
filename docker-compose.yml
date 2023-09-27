@@ -16,7 +16,7 @@ services:
     image: redis
 
   db:
-    image: postgres:11
+    image: postgres:9.6
     volumes:
       - pgdata:/var/lib/postgresql/data
     restart: on-failure
