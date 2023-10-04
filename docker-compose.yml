@@ -26,6 +26,15 @@ services:
       POSTGRES_PASSWORD: PassWord
       POSTGRES_DB: funnela
 
+  mail-daemon:
+    image: wlatanowicz/funnela-mail-daemon:latest
+    restart: on-failure
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=PassWord
+      - DATABASE_NAME=funnela
+
 volumes:
   pgdata:
     driver: local

@@ -24,4 +24,4 @@ Funnela is now running on port `80`. The default user is `admin` with password `
 Restoring existing DB
 ---
 
-Follow steps described in `Basic setup`. Next connect to the postgres server running in a container and replace the `funnela` by restoring the backup. Restart whole docker compose stack. Database will be automatically updated to the most recent version which is compatible with docker - it might take some time.
+Follow steps described in `Basic setup`. Next connect to the postgres server running in a container and replace the `funnela` db by restoring the backup. Restart whole docker compose stack. Database will be automatically updated to the most recent version which is compatible with docker - it might take some time. Use master password to login and change all the passwords.
