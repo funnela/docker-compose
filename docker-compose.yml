@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   funnela:
-    image: wlatanowicz/funnela-web:latest
+    image: funnela/funnela-web:latest
     ports:
       - 80:80
     environment:
@@ -27,7 +27,7 @@ services:
       POSTGRES_DB: funnela
 
   mail-daemon:
-    image: wlatanowicz/funnela-mail-daemon:latest
+    image: funnela/funnela-mail-daemon:latest
     restart: on-failure
     environment:
       - DATABASE_HOST=db
