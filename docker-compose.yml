@@ -2,6 +2,7 @@ version: "3.0"
 services:
   funnela:
     image: funnela/funnela-web:latest
+    restart: always
     ports:
       - 80:80
     environment:
@@ -15,12 +16,13 @@ services:
 
   redis:
     image: redis
+    restart: always
 
   db:
     image: postgres:9.6
+    restart: always
     volumes:
       - pgdata:/var/lib/postgresql/data
-    restart: on-failure
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: PassWord
@@ -28,7 +30,7 @@ services:
 
   mail-daemon:
     image: funnela/funnela-mail-daemon:latest
-    restart: on-failure
+    restart: always
     environment:
       - DATABASE_HOST=db
       - DATABASE_USER=postgres
